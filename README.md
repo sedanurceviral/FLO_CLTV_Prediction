@@ -22,7 +22,7 @@ için değişmez. Bu sayede müşteri başına bırakılan parasal değer hesapl
 CLTV hesaplandıktan sonra, müşteriler segmentlere ayrılabilir. Bu segmentler, müşterilerin satın alma davranışlarını ve değerlerini incelememizi sağlar.
 
 -Müşteri Yaşam Boyu Değeri Tahmini Sonuçlarının Yorumlanması
- Sonuçların yorumlanması, müşterilerin satın alma alışkanlıklarını ve değerlerini anlamamızı sağlar. Bu inceleme ile müşterilerin ihtiyaçlarını belirleyip müşteri memnuniyetini artırmaya dayalı aksiyonlar almaya yardımcı olur.
+Sonuçların yorumlanması, müşterilerin satın alma alışkanlıklarını ve değerlerini anlamamızı sağlar. Bu inceleme ile müşterilerin ihtiyaçlarını belirleyip müşteri memnuniyetini artırmaya dayalı aksiyonlar almaya yardımcı olur.
 
 -Sonuç
 Bu belge FLO mağazasının online/offline satın alşveriş verilerini kullanarak CLTV tahmini için gerekli adımları içerir. Bu adımlar, basit bir CLTV projesinin geliştirilmesi sürecinde kullanılabilir.
