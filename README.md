@@ -1,35 +1,34 @@
-FLO_CLTV_PREDICTION
+# FLO CLTV Prediction
 
--Veri Toplama
+This project aims to predict *Customer Lifetime Value (CLTV)* for FLO customers using probabilistic models such as *BG/NBD* and *Gamma-Gamma Submodel*. The steps of the project are detailed below:
 
-CLTV tahmini yapmak için öncelikle FLO mağazasının veri tabanından gerekli bilgileri çekmek gereklidir.
+## 1. Data Collection
+To make CLTV predictions, necessary data was pulled from FLO's database.
 
--Veri Ön İşleme
+## 2. Data Preprocessing
+After collecting the data, preprocessing steps were applied to ensure data quality and validity. Key preprocessing steps include:
+- *Data Cleaning*: Handling missing values and resolving inconsistencies.
+- *Feature Engineering*: New features were created:
+  - *Recency*: Time since the last purchase (calculated weekly).
+  - *Tenure*: The length of time the customer has been associated with FLO (calculated weekly).
+  - *Monetary Value*: Average transaction value per purchase.
 
-Verileri topladıktan sonra verileri ön işlemeye tabi tutmak gerekir. Ön işleme adımları arasında: verilerin temizlenmesi, eksik verilerin doldurulması ve verilerin yeni özelliklerinin oluşturulması yer almaktadır. 
-Veri öncesinde temizlendiği için aykırı verileri baskılamak yeterli oldu. Aynı zamanda CLTV veri yapısını oluşturmak için recancy, tenure değerleri haftalık, monetary değeri satın alma başına ortalama olarak hesaplandı.
+Since the data was cleaned beforehand, only outliers were suppressed.
 
--BG/NBD Modeli Kurulması ve Satın Alma Tahmini
+## 3. BG/NBD Model Setup
+The *BG/NBD model* was used to predict the expected number of transactions for each customer. This model helps us analyze individual customer purchase behaviors and predict future purchasing patterns.
 
-BG/NBD model insanların satın alma davranışlarının olasılık dağılımının beklenen değerini bireyler özelinde biçimlendirerek her bir birey için beklenen işlem sayısını tahminlendirir
-bu da müşterilerin satın alma alışkanlıklarını ve değerlerini belirlemeye yardımcı olur.
+## 4. Gamma-Gamma Submodel Setup
+The *Gamma-Gamma submodel* assumes that a customer’s transaction value is randomly distributed around a certain rate. The average transaction value may vary across users but remains constant for each individual user. This model allows us to predict the monetary value left by each customer.
 
--Gamma Gamma Submodel Kurulması ve Kar Tahmini
+## 5. CLTV Calculation (Time Projection)
+By combining the *BG/NBD model* and *Gamma-Gamma submodel, **Customer Lifetime Value (CLTV)* was probabilistically calculated with time projections.
 
-Bir müşterinin işlemlerinin parasal değeri işlem oranı etrafında rastgele dağılır ortalama işlem oranı zaman içinde kullanıcılar arasında değişebilir ama tek bir kullanıcı
-için değişmez. Bu sayede müşteri başına bırakılan parasal değer hesaplanabilir.
+## 6. Customer Segmentation
+After calculating CLTV, customers were segmented based on their purchasing behaviors and values. These segments can be used for targeted marketing strategies and customer relationship management.
 
--BG/NBD ve Gamma Gamma Submodel ile CLTV'nin Hesaplanması
+## 7. Interpretation of Results
+The results of the CLTV predictions provide insights into customers' purchasing habits and monetary contributions. This analysis helps FLO identify customer needs and implement strategies to increase customer satisfaction.
 
-İki modelin çarpımı ile zaman projeksiyonlu olasılıksal olarak müşteri yaşam boyu değerini bulabiliriz.
-
--Müşteri Segmentasyonu
-
-CLTV hesaplandıktan sonra, müşteriler segmentlere ayrılabilir. Bu segmentler, müşterilerin satın alma davranışlarını ve değerlerini incelememizi sağlar.
-
--Müşteri Yaşam Boyu Değeri Tahmini Sonuçlarının Yorumlanması
-
-Sonuçların yorumlanması, müşterilerin satın alma alışkanlıklarını ve değerlerini anlamamızı sağlar. Bu inceleme ile müşterilerin ihtiyaçlarını belirleyip müşteri memnuniyetini artırmaya dayalı aksiyonlar almaya yardımcı olur.
-
--Sonuç
-Bu belge FLO mağazasının online/offline satın alşveriş verilerini kullanarak CLTV tahmini için gerekli adımları içerir. Bu adımlar, basit bir CLTV projesinin geliştirilmesi sürecinde kullanılabilir.
+## 8. Conclusion
+This document outlines the steps taken to predict *Customer Lifetime Value (CLTV)* using FLO’s online/offline shopping data. These steps can be applied to develop a basic CLTV prediction project.
